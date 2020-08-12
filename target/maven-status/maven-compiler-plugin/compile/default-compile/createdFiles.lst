@@ -1,0 +1,5 @@
+br\com\dsouzajm\service\ConvidadoService.class
+br\com\dsouzajm\Configuration.class
+br\com\dsouzajm\controllers\ConvidadoController.class
+br\com\dsouzajm\model\Convidado.class
+br\com\dsouzajm\repository\ConvidadoRepository.class
