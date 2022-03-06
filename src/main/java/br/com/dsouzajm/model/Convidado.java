@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity(name = "convidado")
 public class Convidado {
@@ -12,8 +15,17 @@ public class Convidado {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull(message = "Nome não pode estar vazio")
+	@NotBlank(message = "Nome não pode estar vazio")
 	private String nome;
+	
+	@NotNull(message = "Email não pode estar vazio")
+	@NotBlank(message = "Email não pode estar vazio")
 	private String email;
+	
+	@NotNull(message = "Telefone deve ter no mínimo 10 dígitos e no máximo 12 dígitos")
+	@NotBlank(message = "Telefone não pode estar vazio")
+	@Size(min=1, max=32, message="First name must be between 1 and 32 characters")
 	private String telefone;
 
 	public Convidado() {	
